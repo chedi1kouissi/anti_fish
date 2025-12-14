@@ -1,0 +1,15 @@
+Subject: URGENT: Your PayPal Account is Restricted
+From: PayPal Support <security@paypal-support-center.com>
+
+Dear Customer,
+
+We noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.
+
+Please log in immediately to verify your identity and restore full access.
+
+<a href="http://paypal-secure-login-verify.com/login">Click here to verify your account</a>
+
+If you do not verify within 24 hours, your account will be permanently closed.
+
+Thank you,
+PayPal Security Team
