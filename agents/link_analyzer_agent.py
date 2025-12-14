@@ -44,34 +44,48 @@ class LinkAnalyzerAgent:
             
             # 4. Gemini Analysis of Technical Evidence
             prompt = f"""
-            You are a Link Analyzer Agent. Interpret the following technical evidence for a specific URL.
-            
+            You are a Link Analyzer Agent. Extract factual observations from the provided technical evidence for a specific URL.
+
             URL: {url}
-            
+
             Fetch Result:
             {json.dumps(fetch_result, default=str)}
-            
+
             Page Signals:
             {json.dumps(signals_result, default=str)}
-            
+
             Whois Result:
             {json.dumps(whois_result, default=str)}
-            
+
             Task:
-            Determine if this link is malicious, suspicious, or safe based on the evidence.
-            Look for:
-            - Mismatched domains (e.g. paypal-login.com)
-            - Young domains (< 30 days)
-            - Credential harvesting forms
-            - Redirection chains to suspicious sites
+            Analyze the evidence and populate the "facts" object in the output using ONLY verifiable data from the inputs.
             
+            IMPORTANT HANDLING OF ERRORS:
+            - If any input (Fetch, Signals, Whois) contains an "error" field, do NOT fail.
+            - Instead, add the error message to "technical_errors" in the output.
+            - Extract as much valid data as possible from the non-failed inputs.
+            - For example, if Whois fails but Fetch succeeds, still report the redirect chain and page signals.
+
+            Do NOT make ANY judgments about risk (safe/malicious).
+            Do NOT use words like "suspicious", "phishing", or "safe".
+            Do NOT assign a risk score.
+
             Output JSON Schema:
             {{
+                "agent": "LinkAnalyzerAgent",
                 "url": "{url}",
-                "risk_level": "high/medium/low/safe",
-                "evidence": ["list", "of", "key", "findings"],
-                "is_credential_harvesting": bool,
-                "domain_age_warning": bool
+                "facts": {{
+                    "domain_age_days": int | null,
+                    "registrar": "string | null",
+                    "privacy_protection": bool | null,
+                    "redirect_chain": ["url1", "url2"],
+                    "redirect_count": int,
+                    "login_form_detected": bool,
+                    "password_field_detected": bool,
+                    "brand_keywords_found": ["list", "of", "brands", "found"],
+                    "reachability": "reachable" or "unreachable",
+                    "technical_errors": ["list", "of", "errors"]
+                }}
             }}
             """
             

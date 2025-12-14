@@ -20,7 +20,13 @@ def whois_lookup(domain: str) -> Dict[str, Any]:
             
         age_days = -1
         if creation_date:
-            age_days = (datetime.datetime.now() - creation_date).days
+            if creation_date.tzinfo is None:
+                creation_date = creation_date.replace(tzinfo=datetime.timezone.utc)
+            else:
+                creation_date = creation_date.astimezone(datetime.timezone.utc)
+            
+            now = datetime.datetime.now(datetime.timezone.utc)
+            age_days = (now - creation_date).days
             
         privacy_found = False
         if w.text:

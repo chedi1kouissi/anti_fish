@@ -82,10 +82,15 @@ def extract_page_signals(url: str, html_content: str = None) -> Dict[str, Any]:
         suspicious_patterns.append("ngrok_tunnel")
     if "@" in url: # Basic check, though fetch_url handles parsing
         suspicious_patterns.append("url_has_at_symbol")
+
+    analysis_note = ""
+    if not forms:
+        analysis_note = "No HTML forms detected on page"
         
     return {
         "login_form_detected": login_form,
         "password_field_detected": password_field,
         "brand_keywords_found": brand_keywords,
-        "suspicious_patterns": suspicious_patterns
+        "suspicious_patterns": suspicious_patterns,
+        "analysis_note": analysis_note
     }

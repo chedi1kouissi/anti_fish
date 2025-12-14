@@ -7,6 +7,7 @@ from agents.link_analyzer_agent import LinkAnalyzerAgent
 from agents.scoring_agent import ScoringAgent
 from agents.report_agent import ReportAgent
 from dotenv import load_dotenv
+import json
 
 # Ensure we can import modules from current directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -74,6 +75,21 @@ def main():
     print("\n" + "="*60)
     print(report)
     print("="*60)
+
+    # --- JSON Trace Generation (Fix #2) ---
+    analysis_trace = {
+        "IngestionAgent": json.loads(artifact.model_dump_json()),
+        "ExtractorAgent": indicators,
+        "LinkAnalyzerAgent": link_findings,
+        "ScoringAgent": risk_assessment,
+        "ReportAgent": {
+            "report_text": report
+        }
+    }
+    
+    with open("analysis_trace.json", "w") as f:
+        json.dump(analysis_trace, f, indent=2)
+    print("\n[Trace] analysis_trace.json saved.")
 
 if __name__ == "__main__":
     main()

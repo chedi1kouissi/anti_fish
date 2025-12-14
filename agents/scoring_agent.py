@@ -16,26 +16,29 @@ class ScoringAgent:
         Calculates the final risk score and classification.
         """
         prompt = f"""
-        You are a Risk Scoring Agent. Calculate a scam risk score (0-100) based on the provided indicators and findings.
-        
+        You are a Risk Scoring Agent. Calculate a scam risk score (0-100) based on the provided indicators and link analysis facts.
+
         Extractor Indicators:
         {json.dumps(indicators, indent=2)}
-        
-        Link Analysis Findings:
+
+        Link Analysis Facts (Array of objects):
         {json.dumps(link_findings, indent=2)}
-        
+
+        Task:
+        1. Analyze the "facts" for each link to determine its risk.
+           - Young domain (< 30 days) -> High Risk
+           - Mismatched domain (e.g. brand name in subdomain/path but not root) -> High Risk
+           - Login form + Password field on non-official domain -> Critical Risk (Credential Harvesting)
+           - Hidden/Redacted Whois -> Medium Risk factor
+        2. Combine link risk with Extractor indicators (Urgency, Brand Mismatches).
+        3. Assign a final score and severity.
+
         Scoring Rules:
         - 0-20: Safe / Low Risk
         - 21-50: Suspicious / Medium Risk
         - 51-80: High Risk
         - 81-100: Critical / Confirmed Scam
-        
-        Factors to weigh heavily:
-        - Credential harvesting detected (Critical)
-        - Brand impersonation + Urgency (High)
-        - Young domain (< 30 days) (High)
-        - Mismatched sender domain (Medium/High)
-        
+
         Output JSON Schema:
         {{
             "risk_score": int,
