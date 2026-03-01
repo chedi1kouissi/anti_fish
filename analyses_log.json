@@ -1,0 +1,486 @@
+{
+  "8caeaef7-f94a-4eef-9dd0-d431d8eed89b": {
+    "id": "8caeaef7-f94a-4eef-9dd0-d431d8eed89b",
+    "createdAt": "2025-12-14T05:42:47.571064",
+    "updatedAt": "2025-12-14T05:43:43.258605",
+    "sourceType": "email",
+    "sourceName": "PayPal Support",
+    "status": "completed",
+    "threatScore": 95,
+    "confidence": 0.9,
+    "category": "FAKE_EMAIL_PHISHING",
+    "userSummary": "# \ud83d\udea8 Scam Risk Analysis Report\n\n## Summary\n**Risk Score: 95 - Critical**\n\nThis email is a dangerous phishing scam. It is designed to trick you by pretending to be from PayPal. The goal is to steal your password and gain access to your account.\n\n## \ud83d\udd0d Key Evidence\nHere are the clear signs that this email is a fake:\n\n*   **Fake Sender Address:** The email came from `security@paypal-support-center.com`. This is **not** an official PayPal address. Real emails from PayPal will always end in `@paypal.com`.\n*   **False Urgency:** The subject line \"URGENT\" and threats of your account being restricted are tactics used to make you panic and act quickly without thinking.\n*   **Impersonation:** The sender uses the name \"PayPal Support\" and signs off as the \"PayPal Security Team\" to appear legitimate.\n*   **Suspicious Request:** The email asks you to click a link to \"login\" and \"verify\" your account. This is the primary way scammers steal your credentials.\n\n## \ud83d\udee1\ufe0f What To Do Now\nFollow these steps to protect yourself:\n\n*   **Do Not Click Any Links**\n    The links in this email will take you to a fake website designed to steal your login information. Do not interact with them.\n*   **Delete This Email**\n    Safely remove the email from your inbox to prevent you or anyone else from accidentally opening it later.\n*   **Block the Sender**\n    Block the sender's email address (`security@paypal-support-center.com`) to prevent them from sending you more scam emails.\n\n## \u26a0\ufe0f If You Already Clicked\nIf you clicked on a link or entered any information, take these steps immediately:\n\n1.  **Change Your Password:** Go directly to the official PayPal website by typing `paypal.com` into your browser. **Do not use the link from the email.** Change your PayPal password immediately.\n2.  **Update Other Accounts:** If you use the same password for any other online accounts (like your email, banking, or social media), change the passwords on those sites as well.\n3.  **Enable Extra Security:** Turn on Two-Factor Authentication (2FA) in your PayPal account settings. This adds a crucial layer of security that protects you even if someone steals your password.\n4.  **Monitor Your Account:** Keep a close watch on your PayPal account for any transactions you don't recognize. Report any suspicious activity directly to PayPal's official customer support.",
+    "whyFlagged": [
+      "The sender's email address 'security@paypal-support-center.com' is deceptive and does not belong to the official 'paypal.com' domain.",
+      "The email is a clear case of brand impersonation, falsely claiming to be from 'PayPal Support' and the 'PayPal Security Team'.",
+      "It creates a false sense of urgency and uses a threatening tone by claiming the user's account will be suspended.",
+      "The primary requested actions ('login', 'verify') are common tactics for credential harvesting in phishing attacks."
+    ],
+    "recommendedActions": [
+      {
+        "title": "Block Sender and Domain",
+        "priority": "high",
+        "detail": "The sender's domain 'paypal-support-center.com' is fraudulent and should be blocked immediately to prevent future phishing attempts."
+      },
+      {
+        "title": "Delete Email",
+        "priority": "high",
+        "detail": "The email is malicious and should be deleted to prevent accidental interaction with any links or attachments."
+      },
+      {
+        "title": "Do Not Click Links",
+        "priority": "high",
+        "detail": "The links within this email are designed to lead to a malicious credential harvesting website."
+      }
+    ],
+    "indicators": {
+      "urls": [
+        "http://example.com/login"
+      ],
+      "domains": [],
+      "emails": [
+        "security@paypal-support-center.com"
+      ],
+      "phones": []
+    },
+    "timeline": [
+      {
+        "timestamp": "2025-12-14T05:42:47.571064",
+        "label": "Analysis Started",
+        "description": "Message received and queued for analysis",
+        "status": "info"
+      },
+      {
+        "timestamp": "2025-12-14T05:42:49.571064",
+        "label": "AI Scanning",
+        "description": "Scanning for malicious patterns and links",
+        "status": "info"
+      },
+      {
+        "timestamp": "2025-12-14T05:42:51.571064",
+        "label": "Complete",
+        "description": "Analysis finished successfully",
+        "status": "success"
+      }
+    ],
+    "rawContent": "Subject: URGENT: Your PayPal Account is Restricted\nFrom: PayPal Support <security@paypal-support-center.com>\n\nDear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\n<a href=\"http://example.com/login\">Click here to verify your account</a>\n\nIf you do not verify within 24 hours, your account will be permanently closed.\n\nThank you,\nPayPal Security Team\n\n",
+    "safePreview": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identit...",
+    "impersonatedBrand": "PayPal",
+    "mas_artifacts": {
+      "message_artifact": {
+        "source_type": "email",
+        "sender": {
+          "display_name": "PayPal Support",
+          "email": "security@paypal-support-center.com",
+          "phone": null
+        },
+        "subject": "URGENT: Your PayPal Account is Restricted",
+        "body": {
+          "original_text": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\n<a href=\"http://example.com/login\">Click here to verify your account</a>\n\nIf you do not verify within 24 hours, your account will be permanently closed.\n\nThank you,\nPayPal Security Team",
+          "clean_text": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\nClick here to verify your account\n\nIf you do not verify within 24 hours, your account will be permanently closed."
+        },
+        "extracted_entities": {
+          "urls": [
+            "http://example.com/login"
+          ],
+          "emails": [
+            "security@paypal-support-center.com"
+          ],
+          "phones": []
+        },
+        "metadata": {
+          "language": "en",
+          "platform": "email"
+        }
+      },
+      "indicators": {
+        "urgency_detected": true,
+        "urgency_type": "account_suspension",
+        "requested_actions": [
+          "login",
+          "verify"
+        ],
+        "brand_impersonation": {
+          "detected": true,
+          "brand_name": "PayPal",
+          "evidence": "The sender's display name is 'PayPal Support', the subject mentions 'Your PayPal Account', and the body refers to 'PayPal account' and is signed by 'PayPal Security Team'."
+        },
+        "sender_mismatch": {
+          "detected": true,
+          "explanation": "The sender's email address 'security@paypal-support-center.com' does not use the official 'paypal.com' domain, despite the display name 'PayPal Support' and the claim of being from 'PayPal Security Team'."
+        },
+        "language_tone": "threatening"
+      },
+      "link_findings": [
+        {
+          "agent": "LinkAnalyzerAgent",
+          "url": "http://example.com/login",
+          "facts": {
+            "domain_age_days": 11080,
+            "registrar": "RESERVED-Internet Assigned Numbers Authority",
+            "privacy_protection": false,
+            "redirect_chain": [],
+            "redirect_count": 0,
+            "login_form_detected": false,
+            "password_field_detected": false,
+            "brand_keywords_found": [],
+            "reachability": "reachable",
+            "technical_errors": []
+          }
+        }
+      ],
+      "risk_assessment": {
+        "risk_score": 95,
+        "severity_label": "Critical",
+        "scam_type": "Phishing",
+        "reasons": [
+          "The sender's email address 'security@paypal-support-center.com' is deceptive and does not belong to the official 'paypal.com' domain.",
+          "The email is a clear case of brand impersonation, falsely claiming to be from 'PayPal Support' and the 'PayPal Security Team'.",
+          "It creates a false sense of urgency and uses a threatening tone by claiming the user's account will be suspended.",
+          "The primary requested actions ('login', 'verify') are common tactics for credential harvesting in phishing attacks."
+        ],
+        "explanation": "This email is a critical phishing threat. It combines direct brand impersonation of PayPal with a deceptive sender domain and high-urgency tactics to manipulate the user into revealing their login credentials. The sender mismatch is a definitive indicator of a scam.",
+        "recommended_actions": [
+          {
+            "title": "Block Sender and Domain",
+            "priority": "high",
+            "detail": "The sender's domain 'paypal-support-center.com' is fraudulent and should be blocked immediately to prevent future phishing attempts."
+          },
+          {
+            "title": "Delete Email",
+            "priority": "high",
+            "detail": "The email is malicious and should be deleted to prevent accidental interaction with any links or attachments."
+          },
+          {
+            "title": "Do Not Click Links",
+            "priority": "high",
+            "detail": "The links within this email are designed to lead to a malicious credential harvesting website."
+          }
+        ]
+      }
+    }
+  },
+  "63585f2e-57e6-421b-b33f-204a7e1840b8": {
+    "id": "63585f2e-57e6-421b-b33f-204a7e1840b8",
+    "createdAt": "2025-12-14T07:20:14.105987",
+    "updatedAt": "2025-12-14T07:21:10.446566",
+    "sourceType": "email",
+    "sourceName": "PayPal Support",
+    "status": "completed",
+    "threatScore": 95,
+    "confidence": 0.9,
+    "category": "FAKE_EMAIL_PHISHING",
+    "userSummary": "# \ud83d\udea8 Scam Risk Analysis Report\n\n## Summary\n**95 - Critical**\n\nThis is a dangerous phishing scam pretending to be from PayPal. The goal is to steal your password and gain access to your account by tricking you into 'logging in' on a fake website. This email is confirmed to be malicious and should be treated with extreme caution.\n\n## \ud83d\udd0d Key Evidence\nHere are the clear warning signs that prove this email is a scam:\n\n*   **Fake Sender Address:** The sender's email, `security@paypal-support-center.com`, is **not** an official address for PayPal. Real emails from the company will only come from an address ending in `@paypal.com`.\n*   **High-Pressure Tactics:** The email uses threatening language like \"URGENT\" and \"Account is Restricted\" to create a sense of panic. Scammers use this tactic to rush you into making a mistake before you can think.\n*   **Designed to Steal Your Login:** The entire purpose of this email is to scare you into clicking a link and entering your username and password on a fraudulent website.\n\n## \ud83d\udee1\ufe0f What To Do Now\nFollow these steps to protect yourself:\n\n*   **Do Not Click Anything:** Avoid clicking any links, buttons, or downloading any attachments in this email. They will lead to a malicious website.\n*   **Delete the Email:** Immediately and permanently delete this email from your inbox to prevent accidental clicks later.\n*   **Block the Sender:** Block the sender's address (`security@paypal-support-center.com`) to prevent them from sending you more scam emails.\n*   **Check Your Account Safely:** If you are genuinely concerned about your account, do **not** use the links in the email. Instead, open a new browser window and manually type `paypal.com` or use the official PayPal mobile app to log in and check for any notifications.\n\n## \u26a0\ufe0f If You Already Clicked\nIf you clicked a link or entered your password, take these steps immediately:\n\n1.  **Change Your Password:** Go directly to the official PayPal website (`paypal.com`) and change your password right away. If you use that same password for any other accounts (like your bank, email, or social media), change it there too.\n2.  **Enable Two-Factor Authentication (2FA):** Turn on this security feature in your PayPal account settings. It requires you to enter a unique, temporary code from your phone when you log in, which stops hackers even if they have your password.\n3.  **Review Your Account Activity:** Check your recent transactions and account history on the official PayPal site for any activity you don't recognize. Report anything suspicious to PayPal's official customer support immediately.",
+    "whyFlagged": [
+      "The sender's email domain ('paypal-support-center.com') is a deceptive look-alike of the official brand's domain ('paypal.com').",
+      "The email is a clear case of brand impersonation, falsely claiming to be from 'PayPal Support'.",
+      "It employs high-urgency and threatening language ('account suspension') to pressure the user into acting rashly.",
+      "The email's primary goal is to trick the user into a 'login' action, which is a hallmark of credential harvesting attacks."
+    ],
+    "recommendedActions": [
+      {
+        "title": "Block Sender",
+        "priority": "high",
+        "detail": "Block the sender's domain ('paypal-support-center.com') to prevent any further malicious emails from this source."
+      },
+      {
+        "title": "Delete Email",
+        "priority": "high",
+        "detail": "Immediately and permanently delete this email from the inbox to prevent accidental interaction."
+      },
+      {
+        "title": "Do Not Click Links",
+        "priority": "high",
+        "detail": "Avoid clicking any links or downloading attachments from this email, as they are part of a phishing attempt."
+      }
+    ],
+    "indicators": {
+      "urls": [
+        "http://example.com/login"
+      ],
+      "domains": [],
+      "emails": [
+        "security@paypal-support-center.com"
+      ],
+      "phones": []
+    },
+    "timeline": [
+      {
+        "timestamp": "2025-12-14T07:20:14.105987",
+        "label": "Analysis Started",
+        "description": "Message received and queued for analysis",
+        "status": "info"
+      },
+      {
+        "timestamp": "2025-12-14T07:20:16.105987",
+        "label": "AI Scanning",
+        "description": "Scanning for malicious patterns and links",
+        "status": "info"
+      },
+      {
+        "timestamp": "2025-12-14T07:20:18.105987",
+        "label": "Complete",
+        "description": "Analysis finished successfully",
+        "status": "success"
+      }
+    ],
+    "rawContent": "Subject: URGENT: Your PayPal Account is Restricted\nFrom: PayPal Support <security@paypal-support-center.com>\n\nDear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\n<a href=\"http://example.com/login\">Click here to verify your account</a>\n\nIf you do not verify within 24 hours, your account will be permanently closed.\n\nThank you,\nPayPal Security Team\n",
+    "safePreview": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identit...",
+    "impersonatedBrand": "PayPal",
+    "mas_artifacts": {
+      "message_artifact": {
+        "source_type": "email",
+        "sender": {
+          "display_name": "PayPal Support",
+          "email": "security@paypal-support-center.com",
+          "phone": null
+        },
+        "subject": "URGENT: Your PayPal Account is Restricted",
+        "body": {
+          "original_text": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\n<a href=\"http://example.com/login\">Click here to verify your account</a>\n\nIf you do not verify within 24 hours, your account will be permanently closed.\n\nThank you,\nPayPal Security Team",
+          "clean_text": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\nClick here to verify your account\n\nIf you do not verify within 24 hours, your account will be permanently closed."
+        },
+        "extracted_entities": {
+          "urls": [
+            "http://example.com/login"
+          ],
+          "emails": [
+            "security@paypal-support-center.com"
+          ],
+          "phones": []
+        },
+        "metadata": {
+          "language": "en",
+          "platform": "Email"
+        }
+      },
+      "indicators": {
+        "urgency_detected": true,
+        "urgency_type": "account_suspension",
+        "requested_actions": [
+          "login"
+        ],
+        "brand_impersonation": {
+          "detected": true,
+          "brand_name": "PayPal",
+          "evidence": "Sender display name 'PayPal Support', subject containing 'PayPal Account', and body text referencing 'PayPal account' and 'PayPal Security Team'."
+        },
+        "sender_mismatch": {
+          "detected": true,
+          "explanation": "The sender's email domain 'paypal-support-center.com' does not match the legitimate PayPal domain 'paypal.com'. This is a common tactic for phishing to impersonate a trusted brand using a similar but unofficial domain."
+        },
+        "language_tone": "threatening"
+      },
+      "link_findings": [
+        {
+          "agent": "LinkAnalyzerAgent",
+          "url": "http://example.com/login",
+          "facts": {
+            "domain_age_days": 11080,
+            "registrar": "RESERVED-Internet Assigned Numbers Authority",
+            "privacy_protection": false,
+            "redirect_chain": [],
+            "redirect_count": 0,
+            "login_form_detected": false,
+            "password_field_detected": false,
+            "brand_keywords_found": [],
+            "reachability": "reachable",
+            "technical_errors": []
+          }
+        }
+      ],
+      "risk_assessment": {
+        "risk_score": 95,
+        "severity_label": "Critical",
+        "scam_type": "Phishing",
+        "reasons": [
+          "The sender's email domain ('paypal-support-center.com') is a deceptive look-alike of the official brand's domain ('paypal.com').",
+          "The email is a clear case of brand impersonation, falsely claiming to be from 'PayPal Support'.",
+          "It employs high-urgency and threatening language ('account suspension') to pressure the user into acting rashly.",
+          "The email's primary goal is to trick the user into a 'login' action, which is a hallmark of credential harvesting attacks."
+        ],
+        "explanation": "This is a critical-risk phishing attack. It exhibits multiple, high-confidence indicators of a scam, including a mismatched sender domain designed to impersonate PayPal and the use of urgent, threatening language to solicit a login. The intent is clearly to steal user credentials, qualifying it as a confirmed scam.",
+        "recommended_actions": [
+          {
+            "title": "Block Sender",
+            "priority": "high",
+            "detail": "Block the sender's domain ('paypal-support-center.com') to prevent any further malicious emails from this source."
+          },
+          {
+            "title": "Delete Email",
+            "priority": "high",
+            "detail": "Immediately and permanently delete this email from the inbox to prevent accidental interaction."
+          },
+          {
+            "title": "Do Not Click Links",
+            "priority": "high",
+            "detail": "Avoid clicking any links or downloading attachments from this email, as they are part of a phishing attempt."
+          }
+        ]
+      }
+    }
+  },
+  "075ed988-b6d6-4954-a9ef-cef38010c529": {
+    "id": "075ed988-b6d6-4954-a9ef-cef38010c529",
+    "createdAt": "2025-12-14T07:25:24.517569",
+    "updatedAt": "2025-12-14T07:26:25.053378",
+    "sourceType": "email",
+    "sourceName": "PayPal Support",
+    "status": "completed",
+    "threatScore": 98,
+    "confidence": 0.9,
+    "category": "FAKE_EMAIL_PHISHING",
+    "userSummary": "# \ud83d\udea8 Scam Risk Analysis Report\n\n## Summary\n**Risk Score: 98/100 - Critical**\n\nThis is a dangerous phishing scam designed to steal your PayPal login information. The email impersonates PayPal with a fake sender address and uses urgent, threatening language to trick you into giving away your password on a malicious website.\n\n## \ud83d\udd0d Key Evidence\nHere are the clear signs this email is a scam:\n\n*   **Fake Sender Address:** The email comes from `security@paypal-support-center.com`. Official PayPal emails only come from addresses ending in `@paypal.com`. The sender created a fake domain to look legitimate.\n*   **High-Pressure Tactics:** The subject line \"URGENT\" and threats of account restriction are designed to make you panic and act without thinking. Legitimate companies rarely use such an alarming tone.\n*   **Goal is Credential Theft:** The email's primary goal is to get you to click a link to \"login\" and \"verify_identity\". This link would lead to a fake website that captures your username and password.\n*   **Direct Impersonation:** The message uses the \"PayPal Support\" name and branding to appear official, a common tactic for this type of fraud.\n\n## \ud83d\udee1\ufe0f What To Do Now\nFollow these steps to protect yourself:\n\n1.  **Delete this Email Immediately:** Remove the email from your inbox to prevent accidentally clicking on it later.\n2.  **Block the Sender:** Block the email address `security@paypal-support-center.com` to stop them from contacting you again.\n3.  **Do Not Click Any Links or Reply:** Clicking the links will take you to a malicious site. Replying confirms to the scammer that your email address is active, which could lead to more scam attempts.\n4.  **Check Your Account Safely:** If you are concerned about your PayPal account's status, open a new browser window and type **`paypal.com`** directly into the address bar, or use the official PayPal mobile app. Log in there to check for any real notifications.\n\n## \u26a0\ufe0f If You Already Clicked or Entered Information\nIf you clicked a link in the email or entered your login details, take these steps immediately:\n\n1.  **Change Your Password:** Go directly to the official PayPal website (**`paypal.com`**) and change your password right away. If you use that same password on other websites, change it there as well.\n2.  **Enable Two-Factor Authentication (2FA):** This adds a powerful layer of security to your account. It requires a code from your phone in addition to your password to log in.\n3.  **Review Account Activity:** Check your recent transactions and account history for any activity you don't recognize. Report any suspicious activity to the real PayPal support team through their official website.",
+    "whyFlagged": [
+      "The sender's email address 'security@paypal-support-center.com' is not from the official PayPal domain, indicating a clear impersonation attempt.",
+      "The email directly impersonates the brand 'PayPal' using its name, support-style language, and a deceptive domain.",
+      "A false sense of urgency ('URGENT', 'account suspension') is used to pressure the user into acting without thinking.",
+      "The email's goal is to steal login credentials by requesting the user to 'login' and 'verify_identity'.",
+      "The language tone is threatening, which is a common tactic in high-pressure phishing scams."
+    ],
+    "recommendedActions": [
+      {
+        "title": "Block Sender and Delete Email",
+        "priority": "high",
+        "detail": "Immediately block the sender to prevent further malicious emails and delete this message to avoid accidental clicks."
+      },
+      {
+        "title": "Do Not Click Links or Reply",
+        "priority": "high",
+        "detail": "Interacting with the email by clicking links could lead to a credential theft website. Replying confirms your email is active to scammers."
+      },
+      {
+        "title": "Verify Account Status Independently",
+        "priority": "medium",
+        "detail": "If you are concerned about your PayPal account, navigate directly to the official PayPal website or use their official app to log in and check for any notifications. Never use links from a suspicious email."
+      }
+    ],
+    "indicators": {
+      "urls": [
+        "http://example.com/login"
+      ],
+      "domains": [],
+      "emails": [
+        "security@paypal-support-center.com"
+      ],
+      "phones": []
+    },
+    "timeline": [
+      {
+        "timestamp": "2025-12-14T07:25:24.517569",
+        "label": "Analysis Started",
+        "description": "Message received and queued for analysis",
+        "status": "info"
+      },
+      {
+        "timestamp": "2025-12-14T07:25:26.517569",
+        "label": "AI Scanning",
+        "description": "Scanning for malicious patterns and links",
+        "status": "info"
+      },
+      {
+        "timestamp": "2025-12-14T07:25:28.517569",
+        "label": "Complete",
+        "description": "Analysis finished successfully",
+        "status": "success"
+      }
+    ],
+    "rawContent": "Subject: URGENT: Your PayPal Account is Restricted\nFrom: PayPal Support <security@paypal-support-center.com>\n\nDear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\n<a href=\"http://example.com/login\">Click here to verify your account</a>\n\nIf you do not verify within 24 hours, your account will be permanently closed.\n\nThank you,\nPayPal Security Team\n",
+    "safePreview": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identit...",
+    "impersonatedBrand": "PayPal",
+    "mas_artifacts": {
+      "message_artifact": {
+        "source_type": "email",
+        "sender": {
+          "display_name": "PayPal Support",
+          "email": "security@paypal-support-center.com",
+          "phone": null
+        },
+        "subject": "URGENT: Your PayPal Account is Restricted",
+        "body": {
+          "original_text": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\n<a href=\"http://example.com/login\">Click here to verify your account</a>\n\nIf you do not verify within 24 hours, your account will be permanently closed.\n\nThank you,\nPayPal Security Team",
+          "clean_text": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\nClick here to verify your account\n\nIf you do not verify within 24 hours, your account will be permanently closed."
+        },
+        "extracted_entities": {
+          "urls": [
+            "http://example.com/login"
+          ],
+          "emails": [
+            "security@paypal-support-center.com"
+          ],
+          "phones": []
+        },
+        "metadata": {
+          "language": "en",
+          "platform": "email"
+        }
+      },
+      "indicators": {
+        "urgency_detected": true,
+        "urgency_type": "account_suspension",
+        "requested_actions": [
+          "login",
+          "verify_identity"
+        ],
+        "brand_impersonation": {
+          "detected": true,
+          "brand_name": "PayPal",
+          "evidence": "Sender display name 'PayPal Support', subject 'URGENT: Your PayPal Account is Restricted', body referencing 'PayPal account' and 'PayPal Security Team', and the sender email domain attempting to mimic PayPal (paypal-support-center.com)."
+        },
+        "sender_mismatch": {
+          "detected": true,
+          "explanation": "The sender's email address 'security@paypal-support-center.com' does not use the official PayPal domain (e.g., paypal.com). The domain 'paypal-support-center.com' is a common tactic used by scammers to impersonate legitimate brands."
+        },
+        "language_tone": "threatening"
+      },
+      "link_findings": [
+        {
+          "agent": "LinkAnalyzerAgent",
+          "url": "http://example.com/login",
+          "facts": {
+            "domain_age_days": 11080,
+            "registrar": "RESERVED-Internet Assigned Numbers Authority",
+            "privacy_protection": false,
+            "redirect_chain": [],
+            "redirect_count": 0,
+            "login_form_detected": false,
+            "password_field_detected": false,
+            "brand_keywords_found": [],
+            "reachability": "reachable",
+            "technical_errors": []
+          }
+        }
+      ],
+      "risk_assessment": {
+        "risk_score": 98,
+        "severity_label": "Critical",
+        "scam_type": "Phishing",
+        "reasons": [
+          "The sender's email address 'security@paypal-support-center.com' is not from the official PayPal domain, indicating a clear impersonation attempt.",
+          "The email directly impersonates the brand 'PayPal' using its name, support-style language, and a deceptive domain.",
+          "A false sense of urgency ('URGENT', 'account suspension') is used to pressure the user into acting without thinking.",
+          "The email's goal is to steal login credentials by requesting the user to 'login' and 'verify_identity'.",
+          "The language tone is threatening, which is a common tactic in high-pressure phishing scams."
+        ],
+        "explanation": "This is a critical and textbook phishing attack. It combines direct brand impersonation of a major financial service (PayPal) with a fraudulent sender domain and urgent, threatening language to trick the user into revealing their login credentials. The combination of these high-risk indicators confirms the malicious intent.",
+        "recommended_actions": [
+          {
+            "title": "Block Sender and Delete Email",
+            "priority": "high",
+            "detail": "Immediately block the sender to prevent further malicious emails and delete this message to avoid accidental clicks."
+          },
+          {
+            "title": "Do Not Click Links or Reply",
+            "priority": "high",
+            "detail": "Interacting with the email by clicking links could lead to a credential theft website. Replying confirms your email is active to scammers."
+          },
+          {
+            "title": "Verify Account Status Independently",
+            "priority": "medium",
+            "detail": "If you are concerned about your PayPal account, navigate directly to the official PayPal website or use their official app to log in and check for any notifications. Never use links from a suspicious email."
+          }
+        ]
+      }
+    }
+  }
+}

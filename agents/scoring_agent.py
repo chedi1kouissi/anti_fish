@@ -44,14 +44,33 @@ class ScoringAgent:
             "risk_score": int,
             "severity_label": "Safe/Low/Medium/High/Critical",
             "scam_type": "Phishing/AdvanceFee/TechSupport/None/...",
-            "top_reasons": ["reason 1", "reason 2", ...],
-            "explanation": "Short summary of why this score was given."
+            "reasons": ["reason 1", "reason 2", ...],
+            "explanation": "Short summary of why this score was given.",
+            "recommended_actions": [
+                {{
+                    "title": "Action Title (e.g. Block Sender)",
+                    "priority": "high/med/low",
+                    "detail": "Why this action is needed."
+                }}
+            ]
         }}
         """
         
         try:
             response = self.model.generate_content(prompt)
+            if not response.text:
+                raise ValueError("Empty response from Gemini")
             text = response.text.replace("```json", "").replace("```", "").strip()
             return json.loads(text)
+        except Exception as e:
+            print(f"ScoringAgent Error: {e}")
+            return {
+                "risk_score": 0,
+                "severity_label": "Unknown",
+                "scam_type": "Unknown",
+                "reasons": [f"AI Error: {str(e)}"],
+                "explanation": "Failed to generate risk score.",
+                "recommended_actions": []
+            }
         except Exception as e:
             return {"error": str(e)}

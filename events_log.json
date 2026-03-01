@@ -1,0 +1,275 @@
+{
+  "3998ad41-b2f9-4dad-882c-fe48a021cdd6": [
+    {
+      "timestamp": "2025-12-14T02:47:55.973107",
+      "agentName": "IngestionAgent",
+      "action": "started",
+      "details": {
+        "text_length": 34
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:47:58.974166",
+      "agentName": "IngestionAgent",
+      "action": "completed",
+      "details": {
+        "source_type": "url",
+        "sender": {
+          "display_name": null,
+          "email": null,
+          "phone": null
+        },
+        "subject": null,
+        "body": {
+          "original_text": "URL to analyze: https://paypal.com",
+          "clean_text": "URL to analyze: https://paypal.com"
+        },
+        "extracted_entities": {
+          "urls": [
+            "https://paypal.com"
+          ],
+          "emails": [],
+          "phones": []
+        },
+        "metadata": {
+          "language": "en",
+          "platform": null
+        }
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:47:58.974166",
+      "agentName": "ExtractorAgent",
+      "action": "started",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-12-14T02:48:04.955755",
+      "agentName": "ExtractorAgent",
+      "action": "completed",
+      "details": {
+        "urgency_detected": false,
+        "urgency_type": "none",
+        "requested_actions": [],
+        "brand_impersonation": {
+          "detected": false,
+          "brand_name": null,
+          "evidence": null
+        },
+        "sender_mismatch": {
+          "detected": false,
+          "explanation": "No sender information (display_name, email, phone) was available in the artifact to perform a sender mismatch analysis."
+        },
+        "language_tone": "informational"
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:48:04.955755",
+      "agentName": "LinkAnalyzerAgent",
+      "action": "started",
+      "details": {
+        "url_count": 1
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:48:20.987151",
+      "agentName": "LinkAnalyzerAgent",
+      "action": "completed",
+      "details": [
+        {
+          "agent": "LinkAnalyzerAgent",
+          "url": "https://paypal.com",
+          "facts": {
+            "domain_age_days": null,
+            "registrar": null,
+            "privacy_protection": null,
+            "redirect_chain": [],
+            "redirect_count": 0,
+            "login_form_detected": false,
+            "password_field_detected": false,
+            "brand_keywords_found": [],
+            "reachability": "unreachable",
+            "technical_errors": [
+              "Expecting value: line 1 column 1 (char 0)",
+              "Expecting value: line 1 column 1 (char 0)",
+              "Expecting value: line 1 column 1 (char 0)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-12-14T02:48:20.987151",
+      "agentName": "ScoringAgent",
+      "action": "started",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-12-14T02:48:31.593549",
+      "agentName": "ScoringAgent",
+      "action": "completed",
+      "details": {
+        "risk_score": 5,
+        "severity_label": "Safe/Low",
+        "scam_type": "None",
+        "top_reasons": [
+          "No malicious indicators detected in the content (e.g., urgency, threats, sender mismatch).",
+          "The provided link points to a known legitimate domain (paypal.com).",
+          "Link analysis did not reveal any phishing or credential harvesting indicators."
+        ],
+        "explanation": "The analysis shows no signs of a scam. The content is informational, lacks urgency, and does not impersonate any brand. The link provided is the official domain for PayPal. Although the automated analysis of the link failed due to a technical error, the absence of any malicious indicators in the text or the link itself results in a very low risk score."
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:48:31.593549",
+      "agentName": "ReportAgent",
+      "action": "started",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-12-14T02:48:45.840866",
+      "agentName": "ReportAgent",
+      "action": "completed",
+      "details": {
+        "summary_length": 1431
+      }
+    }
+  ],
+  "b97a9f8e-1e3e-4fab-b9ad-5e94677acb77": [
+    {
+      "timestamp": "2025-12-14T02:50:58.270679",
+      "agentName": "IngestionAgent",
+      "action": "started",
+      "details": {
+        "text_length": 524
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:51:04.465035",
+      "agentName": "IngestionAgent",
+      "action": "completed",
+      "details": {
+        "source_type": "email",
+        "sender": {
+          "display_name": "PayPal Support",
+          "email": "security@paypal-support-center.com",
+          "phone": null
+        },
+        "subject": "URGENT: Your PayPal Account is Restricted",
+        "body": {
+          "original_text": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\n<a href=\"http://example.com/login\">Click here to verify your account</a>\n\nIf you do not verify within 24 hours, your account will be permanently closed.\n\nThank you,\nPayPal Security Team",
+          "clean_text": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account. To prevent unauthorized access, we have temporarily limited your account features.\n\nPlease log in immediately to verify your identity and restore full access.\n\nClick here to verify your account\n\nIf you do not verify within 24 hours, your account will be permanently closed.\n\nThank you,\nPayPal Security Team"
+        },
+        "extracted_entities": {
+          "urls": [
+            "http://example.com/login"
+          ],
+          "emails": [
+            "security@paypal-support-center.com"
+          ],
+          "phones": []
+        },
+        "metadata": {
+          "language": "en",
+          "platform": "email"
+        }
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:51:04.465035",
+      "agentName": "ExtractorAgent",
+      "action": "started",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-12-14T02:51:09.729752",
+      "agentName": "ExtractorAgent",
+      "action": "completed",
+      "details": {
+        "urgency_detected": true,
+        "urgency_type": "account_suspension",
+        "requested_actions": [
+          "login"
+        ],
+        "brand_impersonation": {
+          "detected": true,
+          "brand_name": "PayPal",
+          "evidence": "The sender's display name is 'PayPal Support', the subject line mentions 'PayPal Account', and the body references 'PayPal account' and is signed off by 'PayPal Security Team'."
+        },
+        "sender_mismatch": {
+          "detected": true,
+          "explanation": "The sender's email address 'security@paypal-support-center.com' is not an official PayPal domain (e.g., paypal.com). The domain 'paypal-support-center.com' is a common phishing tactic to mimic legitimate services."
+        },
+        "language_tone": "threatening"
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:51:09.729752",
+      "agentName": "LinkAnalyzerAgent",
+      "action": "started",
+      "details": {
+        "url_count": 1
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:51:25.726923",
+      "agentName": "LinkAnalyzerAgent",
+      "action": "completed",
+      "details": [
+        {
+          "agent": "LinkAnalyzerAgent",
+          "url": "http://example.com/login",
+          "facts": {
+            "domain_age_days": 11079,
+            "registrar": "RESERVED-Internet Assigned Numbers Authority",
+            "privacy_protection": false,
+            "redirect_chain": [],
+            "redirect_count": 0,
+            "login_form_detected": false,
+            "password_field_detected": false,
+            "brand_keywords_found": [],
+            "reachability": "reachable",
+            "technical_errors": []
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-12-14T02:51:25.726923",
+      "agentName": "ScoringAgent",
+      "action": "started",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-12-14T02:51:38.360031",
+      "agentName": "ScoringAgent",
+      "action": "completed",
+      "details": {
+        "risk_score": 95,
+        "severity_label": "Critical",
+        "scam_type": "Phishing",
+        "top_reasons": [
+          "The sender's email address ('security@paypal-support-center.com') is not an official PayPal domain, indicating a spoofing attempt.",
+          "The email impersonates a well-known brand (PayPal) to gain the user's trust.",
+          "Creates a false sense of urgency (account suspension) to pressure the user into immediate action.",
+          "The language is threatening, a common tactic to bypass rational thinking."
+        ],
+        "explanation": "This email is a textbook phishing attack. It exhibits multiple critical red flags including impersonation of a trusted brand (PayPal), a mismatched sender domain designed to look legitimate, and the use of urgent, threatening language to provoke a hasty response. The goal is to steal login credentials. The combination of these factors confirms malicious intent, resulting in a critical risk score."
+      }
+    },
+    {
+      "timestamp": "2025-12-14T02:51:38.360031",
+      "agentName": "ReportAgent",
+      "action": "started",
+      "details": {}
+    },
+    {
+      "timestamp": "2025-12-14T02:51:56.695753",
+      "agentName": "ReportAgent",
+      "action": "completed",
+      "details": {
+        "summary_length": 2210
+      }
+    }
+  ]
+}
